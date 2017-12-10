@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weathermap API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>OpenWeatherMap</h1>
+    <div id="weather_info" class="weather_info">
+        <h1 class="city"></h1>
+    
+        <section>
+            <p class="w_id"></p>
+            <figure class="icon"></figure>
+            <p class="temp"></p>
+            <aside>
+                <p class="temp_max">max</p>
+                <p class="temp_min">min</p>
+            </aside>
+        </section>
+        <img class="load_img" src="loading.gif" width="50px">
+    </div>
+    <script>
+        var url='http://api.openweathermap.org/data/2.5/weather?q=seoul&APPID=cd2ffeaea834c77978b43b60d2313cc2';
+
+        $('#weather_info .load_img').show();
+        $.getJSON(url, function(data){
+            // 날씨 데이터 객체
+            var sys = data.sys;
+            var city = data.name;
+            var weather = data.weather;
+            var main = data.main;
+            var wmain = weather[0].main;
+            var w_id = weather[0].id;
+            var icon = weather[0].icon;
+            var country = sys.country;
+            var temp = main.temp;
+            var temp_min = main.temp_min;
+            var temp_max = main.temp_max;
+
+            // 날씨 정보 표시
+            /*
+            $('body').append(wmain+', '+icon+' '
+                +'현재온도: '+parseInt(temp-273.15)+' '
+                +'최저온도: '+parseInt(temp_min-273.15) + ' '
+                +'최고온도: '+parseInt(temp_max-273.15) + ' '
+                +country+' '+city+' '+w_id+' '+'<br>'
+            );
+            */
+
+            // 날씨 아이콘 표시
+            var icon_url = 'http://openweathermap.org/img/w/'+icon;
+            // $('body').append("<img src='" + icon_url + ".png'>");
+
+            // 날씨 정보 표시
+            $('#weather_info > .city').html(city + "/" + country);
+            $('#weather_info .icon').html("<img src='" + icon_url + ".png'>");
+            $('#weather_info .w_id').html(wmain);
+            $('#weather_info .temp_min').html(parseInt(temp_min - 273.15) + '&deg;' + ' min');
+            $('#weather_info .temp_max').html(parseInt(temp_max - 273.15) + '&deg;' + ' max');
+            $('#weather_info .temp').html(parseInt(temp - 273.15) + '&deg;');
+            // 로딩 후 로딩 이미지 제거
+            $('#weather_info .load_img').hide();
+        }).fail(function() {
+                alert('loading error');
+            }
+        );
+    </script>
+</body>
+</html>

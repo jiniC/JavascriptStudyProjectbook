@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    font-weight: normal;
+}
+p {
+    margin-bottom: 10px;
+}
+body {
+    color: #333;
+    font-size: 100%;
+    font-family: sans-serif;
+}
+.weather_info {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #eee url("https://lintvwkbn.files.wordpress.com/2016/03/youngstown-ohio-weather-forecast-cloudy-7.jpg") no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.city {
+    padding: 10px;
+    background-color: #666;
+    font-size: 1.8em;
+    text-align: center;
+    opacity: 0.8;
+}
+section {
+    overflow: hidden;
+    padding: 10px 20px;
+    color: #666;
+    text-shadow: 1px 1px 1px #999;
+}
+.w_id {
+    padding-left: 20px;
+    text-align: left;
+}
+.icon,
+.temp {
+    float: left;
+    width: 33.3%;
+}
+figure > img {
+    width: 80px;
+}
+.temp {
+    font-size: 3.4em;
+}
+aside {
+    overflow: hidden;
+}
+aside > p {
+    font-size: 1.8em;
+    text-align: right;
+}
+#weather_info .load_img{ 
+    position: absolute; 
+    left: 50%;top: 50%;
+    display: none; 
+}
