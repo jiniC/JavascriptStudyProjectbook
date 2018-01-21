@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>project2 라이트박스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>light box</h1>
+        <img class="thumb" src="img/img1.jpg" width="100" />
+        <img class="thumb" src="img/img2.jpg" width="100" />
+        <img class="thumb" src="img/img3.jpg" width="100" />
+    </header>
+    <div id="block"></div>
+    <div id="lightbox">
+        <h1>박물관에서 사라진 아빠를 찾아서</h1>
+        <p>아빠와 함께 떠난 숲속의 박물관 여행에서 아빠가 말도 없이 사라지자 강아지 베리와 함께 아빠를 찾아 헤메는데...<br><br></p>
+        <figure>
+            <img src="img/img1.jpg" class="active" alt="" />
+            <img src="img/img2.jpg" alt="" />
+            <img src="img/img3.jpg" alt="" `/>
+        </figure>
+        <div class="indicator">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+        <div class="btn-close">X</div>
+    </div>
+    <!--<script src="app.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="app_jq.js" type="text/javascript"></script>
+</body>
+</html>
