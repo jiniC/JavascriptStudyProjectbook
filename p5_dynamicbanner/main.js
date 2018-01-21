@@ -85,5 +85,5 @@ toggle.onclick = function() {
     }
 }
 banner.onclick = function() {
-    window.open('https://csslick.github.io/', '_blank');
+    window.open('https://github.com/jiniC', '_blank');
 }

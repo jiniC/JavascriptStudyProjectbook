@@ -105,3 +105,13 @@ ul.icons > li{
     border: 1px solid rgba(100, 100, 100, 0.3);
     color: white;
 }
+
+/*
+3d전환: css3 트램스폼
+perspective: 픽셀 값 적으면 왜곡 커짐 픽셀 값 크면 왜곡 적어짐
+transform-style
+transition-duration
+transform-style: preserve-3d -> 적용된 요소의 내부에 3D 공간계 활성
+translateZ(px): 3차원 Z축으로 위치 이동(양수 값은 가깝, 음수 값은 멀어짐)
+rotateY(deg): T축 기준으로 회전(각도)
+*/
