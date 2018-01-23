@@ -11,7 +11,6 @@ function set_ballon(num) {
         size = Math.floor(Math.random() * (200-100) + 100),
         angle = Math.floor(Math.random() * (360-0) + 0),
         speed = Math.random() * (2-0) + 0;
-
     cast[num] = {
         x: x,
         y: -y,
@@ -19,10 +18,7 @@ function set_ballon(num) {
         angle: angle,
         speed: speed
     };
-
-    console.log(cast);
 }
-
 function ball_init() {
     for(var i = 0 ; i < img.length; i++) {
         set_ballon(i);
@@ -30,9 +26,7 @@ function ball_init() {
         img[i].style.top = '-9999px'; // 풍선의 y
     }
 }
-
 ball_init();
-
 function animate_ballon() {
     for(var i=0; i<img.length; i++) {
         img[i].style.left = cast[i].x + 'px';
@@ -47,7 +41,6 @@ function animate_ballon() {
     }
 }
 setInterval(function(){animate_ballon();},1000/30);
-
 function bgm_init() {
     var bgm = new Audio();
     bgm.src = 'img/bgm.mp3';
@@ -56,7 +49,6 @@ function bgm_init() {
     document.body.appendChild(bgm);
 }
 bgm_init();
-
 sound_btn.onclick = function(event) {
     var attr = sound_btn.getAttribute('class');
     var bgm = document.getElementsByTagName('audio');
@@ -69,9 +61,8 @@ sound_btn.onclick = function(event) {
         sound_btn.setAttribute('src', 'img/sound_on.png');  
         bgm[0].play();
     }
-    event.stopPropagation();
+    event.stopPropagation(); // 이벤트 버빌링 차단
 }
-
 toggle.onclick = function() {
     var attr = banner.getAttribute('class');
     if(attr=='active') {
